@@ -15,8 +15,8 @@ steps:
     dockerVersion: '17.09.0-ce'
 - task: Bash@3
   inputs:
-    arguments: 'docker run flyway/flyway -v'
-- script: echo Hello, world!
+    targettype: 'inline'
+    script: docker run flyway/flyway -v
   displayName: 'Run a one-line script'
 
 - script: |
