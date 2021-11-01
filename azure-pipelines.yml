@@ -16,8 +16,8 @@ steps:
 - task: Bash@3
   inputs:
     targettype: 'inline'
-    script: docker ps
-  displayName: 'Run a one-line script'
+    script: 'cat ''$(Build.SourcesDirectory)\README.txt'''
+  displayName: 'Do something with a local file'
 - task: Bash@3
   inputs:
     targettype: 'inline'
