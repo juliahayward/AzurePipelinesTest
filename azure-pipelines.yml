@@ -16,6 +16,11 @@ steps:
 - task: Bash@3
   inputs:
     targettype: 'inline'
+    script: docker ps
+  displayName: 'Run a one-line script'
+- task: Bash@3
+  inputs:
+    targettype: 'inline'
     script: docker run flyway/flyway -v
   displayName: 'Run a one-line script'
 
