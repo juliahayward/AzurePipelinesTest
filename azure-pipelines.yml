@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-# Check out this repository. (We can do others with a `resources` entry)
+# Check out this repository.
 - checkout: self
 - task: DockerInstaller@0
   inputs:
@@ -18,7 +18,7 @@ steps:
 - task: Bash@3
   inputs:
     targettype: 'inline'
-    script: 'cat ''$(Build.SourcesDirectory)\README.txt'''
+    script: 'ls -R ''$(Build.SourcesDirectory)'''
   displayName: 'Do something with a local file'
 - task: Bash@3
   inputs:
