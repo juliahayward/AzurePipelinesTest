@@ -10,6 +10,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+# Check out this repository. (We can do others with a `resources` entry)
+- checkout: self
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '17.09.0-ce'
