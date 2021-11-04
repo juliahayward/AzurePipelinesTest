@@ -23,7 +23,7 @@ steps:
 - task: Bash@3
   inputs:
     targettype: 'inline'
-    script: docker run flyway/flyway info -url=jdbc:sqlserver://52.17.96.229:1433;databaseName=azure-demo-dev -user=azureDemo -password=$(DbPwd)
+    script: docker run flyway/flyway -url=jdbc:sqlserver://52.17.96.229:1433;databaseName=azure-demo-dev -user=azureDemo -password=$(DbPwd) info 
   displayName: 'Run flyway info on DEV'
 
 - script: |
