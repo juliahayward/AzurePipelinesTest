@@ -1,0 +1,3 @@
+CREATE TABLE three (id INT);
+
+INSERT INTO three VALUES (3);
