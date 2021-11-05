@@ -19,11 +19,11 @@ steps:
   inputs:
     targettype: 'inline'
     script: 'ls -R ''$(Build.SourcesDirectory)'''
-  displayName: 'Do something with a local file'
+  displayName: 'DEBUG: List out the files in the repo'
 - task: Bash@3
   inputs:
     targettype: 'inline'
-    script: docker run flyway/flyway -url="jdbc:sqlserver://52.17.96.229:1433;databaseName=azure-demo-dev" -user=azureDemo -password=$(DbPwd) -locations="filesystem:$(Build.SourcesDirectory)/migrate" 
+    script: docker run flyway/flyway -url="jdbc:sqlserver://52.17.96.229:1433;databaseName=azure-demo-dev" -user=azureDemo -password=$(DbPwd) -locations="filesystem:$(Build.SourcesDirectory)/migrations" 
   displayName: 'Run flyway info on DEV'
 
 - script: |
