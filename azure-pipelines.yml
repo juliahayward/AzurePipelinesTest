@@ -23,11 +23,6 @@ steps:
 - task: Bash@3
   inputs:
     targettype: 'inline'
-    script: docker run -v $(Build.SourcesDirectory)/migrations:/sql flyway/flyway -url="jdbc:sqlserver://52.17.96.229:1433;databaseName=azure-demo-test" -user=azureDemo -password=$(DbPwd) -locations=filesystem:/sql clean migrate
-  displayName: 'Run flyway CLEAN MIGRATE on TEST'
-- task: Bash@3
-  inputs:
-    targettype: 'inline'
-    script: docker run -v $(Build.SourcesDirectory)/migrations:/sql flyway/flyway -url="jdbc:sqlserver://52.17.96.229:1433;databaseName=azure-demo-prod" -user=azureDemo -password=$(DbPwd) -locations=filesystem:/sql migrate
-  displayName: 'Run flyway MIGRATE on PROD'
+    script: docker run -v $(Build.SourcesDirectory)/migrations:/sql flyway/flyway -url="jdbc:sqlserver://52.17.96.229:1433;databaseName=azure-demo-test" -user=azureDemo -password=$(DbPwd) -locations=filesystem:/sql migrate
+  displayName: 'Run flyway migrate on TEST'
 

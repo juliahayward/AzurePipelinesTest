@@ -1,3 +1,0 @@
-CREATE TABLE one (id INT);
-
-INSERT INTO one VALUES (1);
