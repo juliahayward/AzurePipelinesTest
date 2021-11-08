@@ -1,0 +1,5 @@
+CREATE TABLE two (id INT);
+
+INSERT INTO two VALUES (2);
+
+INSERT INTO one VALUES (-1);
